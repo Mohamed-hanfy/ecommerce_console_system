@@ -1,6 +1,7 @@
 package org.example.product;
 
 import org.example.product.expire.ExpireStrategy;
+import org.example.product.shipping.ShippableItems;
 import org.example.product.shipping.ShippingStrategy;
 
 public class Product {
@@ -48,4 +49,17 @@ public class Product {
         return shippingStrategy.getWeight();
     }
 
+    public ShippableItems toshippableItems(int quantity) {
+        if(!isShippable()) {
+            return null;
+        }
+        return new ShippableItems() {
+            public String getName() {
+                return name;
+            }
+            public double getWeight() {
+                return shippingStrategy.getWeight() * quantity;
+            }
+        };
+    }
 }
