@@ -24,7 +24,18 @@ public class Cart {
         if(product.isExpired()) {
             assert false : "Product is expired " + product.getName();
         }
-        items.put(product, quantity);
+        items.merge(product, quantity, Integer::sum);
+    }
+
+    public boolean isEmpty() {
+        return items.isEmpty();
+    }
+
+    public double getSubtotal() {
+        return items.entrySet()
+                .stream()
+                .mapToDouble(entry -> entry.getKey().getPrice() * entry.getValue()).sum();
+
     }
 
     public Map<Product, Integer> getItems() {
