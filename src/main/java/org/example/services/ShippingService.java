@@ -12,9 +12,7 @@ public class ShippingService {
         }
         double totalWeight = items.stream().mapToDouble(ShippableItems::getWeight).sum();
 
-        for(ShippableItems item : items) {
-            System.out.println(item.getName() + " " + item.getWeight());
-        }
+        System.out.printf("Total Package Weight: %.2f kg \n", totalWeight);
 
         return totalWeight * costPerPound;
     }
