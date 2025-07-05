@@ -6,7 +6,7 @@ A simple Java console-based e-commerce system demonstrating core concepts such a
 
 - [MyThinking.md](MyThinking.md) -design decisions
 
-## Project Architecture
+## Project Structure
 
 The system is organized into modular packages, each handling a distinct domain:
 
