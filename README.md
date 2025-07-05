@@ -6,6 +6,21 @@ A simple Java console-based e-commerce system demonstrating core concepts such a
 
 - [MyThinking.md](MyThinking.md) -design decisions
 
+## Project Architecture
+
+The system is organized into modular packages, each handling a distinct domain:
+
+```
+org.example
+├── cart/              # Shopping cart management
+├── customer/          # Customer domain and account management
+├── product/           # Product catalog and management
+│   ├── expire/        # Product expiration strategies
+│   └── shipping/      # Shipping classification strategies
+├── services/          # Business logic and transaction services
+└── Main.java          # Application entry point
+```
+
 ## Features
 
 - **Product Management:** Supports expirable and non-expirable products, shippable and non-shippable items.
@@ -14,12 +29,6 @@ A simple Java console-based e-commerce system demonstrating core concepts such a
 - **Checkout Process:** Calculates subtotal, shipping costs, and updates product quantities and customer balance.
 - **Shipping Calculation:** Only shippable items are considered for shipping cost.
   
-## Core Components
-
-- **Product Management**: Support for different product types with varying properties
-- **Shopping Cart**: Add, remove, and manage products in a shopping cart
-- **Customer Management**: Customer information and balance tracking
-- **Checkout System**: Complete transaction processing
 
 ## some usecases 
 ![image](https://github.com/user-attachments/assets/48a418d4-d20c-4a89-a377-454dc88a2383)
